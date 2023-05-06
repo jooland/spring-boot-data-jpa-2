@@ -15,5 +15,5 @@ public class BarcoController {
 	@Autowired
 	private SocioDao socioDao;
 	
-	public 
+	//public hlaaaaaaaa
 }
