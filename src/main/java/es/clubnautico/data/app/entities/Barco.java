@@ -43,11 +43,13 @@ public class Barco implements Serializable{
 	}
 	
 
-	public Barco(Long idBarco, Long matricula, String nombre, boolean activo) {
+	public Barco( Long matricula, String nombre, int numAmarre, float cuota, boolean activo) {
 		
-		this.idBarco = idBarco;
+		
 		this.matricula = matricula;
 		this.nombre = nombre;
+		this.numAmarre = numAmarre;
+		this.cuota = cuota;
 		this.activo = activo;
 	}
 

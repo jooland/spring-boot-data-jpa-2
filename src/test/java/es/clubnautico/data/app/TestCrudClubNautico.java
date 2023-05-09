@@ -80,7 +80,7 @@ public class TestCrudClubNautico {
 	public void TestCrearBarco() {
 	//	Optional<Socio> socio = socioDao.findById(1L);
 		//Socio socioBarco = socio.get();
-		Barco barco1 = new Barco(null, 501L, "mosca", true);
+		Barco barco1 = new Barco(null, 501L, "mosca",154,344l,true);
 		barco1=barcoDao.save(barco1);
 		assertNotNull(barco1);
 		

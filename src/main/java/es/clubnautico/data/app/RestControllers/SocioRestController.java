@@ -48,8 +48,15 @@ public class SocioRestController {
 
 	@PutMapping("/socio/{id}")
 	public ResponseEntity<Socio> actualizar(@RequestBody Socio socio, @PathVariable Long id) {
-		Optional<Socio> socioId = socioController.buscarPorId(id);
-
+		
+		
+		try {
+			Socio actualizado = socioController.actualizarSocio(socio, id);
+			return ResponseEntity.ok(actualizado);
+		} catch (Exception e) {
+			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
+		}
+		/*Optional<Socio> socioId = socioController.buscarPorId(id);
 		if (socioId.isPresent()) {
 			Socio socioActual = socioId.get();
 			socioActual.setNombre(socio.getNombre());
@@ -60,9 +67,10 @@ public class SocioRestController {
 			return ResponseEntity.ok(socioActualizado);
 		} else {
 			return ResponseEntity.notFound().build();
-		}
+		}*/
 	}
 
+	
 	@DeleteMapping("/socio/{id}")
 	public ResponseEntity<Void> borrarPorId(@PathVariable Long id) {
 		Optional<Socio> socio = socioController.buscarPorId(id);
