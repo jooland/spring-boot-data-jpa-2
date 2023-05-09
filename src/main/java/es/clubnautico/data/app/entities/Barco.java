@@ -25,7 +25,7 @@ public class Barco implements Serializable{
 	private int numAmarre;
 	private float cuota;
 	
-	@Column(columnDefinition = "BOOLEAN DEFAULT TRUE")
+	@Column(columnDefinition = "BOOLEAN DEFAULT FALSE")
 	private boolean activo;
 	
 	public Barco() {
